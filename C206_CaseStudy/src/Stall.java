@@ -8,9 +8,17 @@ public class Stall {
 		this.name = name;
 		this.dateOfOperation = dateOfOperation;
 	}
+	
+	public String toString() {
+		String stallInfo = String.format("%-10s %-30s", name, dateOfOperation);
+		
+		return stallInfo;
+	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public String getDate() {
 		return dateOfOperation;
 	}

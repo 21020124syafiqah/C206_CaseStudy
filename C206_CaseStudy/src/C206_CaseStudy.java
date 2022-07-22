@@ -20,7 +20,7 @@ public class C206_CaseStudy {
 			if(option == 1) {
 				
 			}else if(option == 2) {
-				
+				viewAllStalls(stallList);
 			}else if(option == 3) {
 				
 			}else if(option == 4) {
@@ -44,6 +44,24 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 		System.out.println(header);
 		Helper.line(80, "-");
+	}
+	
+	public static String retrieveAllStalls(ArrayList<Stall> stallList) {
+		String output = "";
+		
+		for (int i = 0; i < stallList.size(); i++) {
+			output += String.format("%-60s \n", stallList.get(i).toString());
+		}
+		
+		return output;
+	}
+	
+	public static void viewAllStalls(ArrayList<Stall> stallList) {
+		C206_CaseStudy.setHeader("STALL LIST");
+		
+		String output = String.format("%-10s %-70s\n", "NAME", "DATE OF OPERATION");
+	    output += retrieveAllStalls(stallList);
+	    System.out.println(output);
 	}
 
 }
