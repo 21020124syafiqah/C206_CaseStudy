@@ -59,7 +59,7 @@ public class C206_CaseStudy {
 	public static void viewAllStalls(ArrayList<Stall> stallList) {
 		C206_CaseStudy.setHeader("STALL LIST");
 		
-		String output = String.format("%-10s %-70s\n", "NAME", "DATE OF OPERATION");
+		String output = String.format("%-20s %-70s\n", "NAME", "DATE OF OPERATION");
 	    output += retrieveAllStalls(stallList);
 	    System.out.println(output);
 	}

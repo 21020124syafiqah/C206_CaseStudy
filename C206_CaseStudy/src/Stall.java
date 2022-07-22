@@ -10,7 +10,7 @@ public class Stall {
 	}
 	
 	public String toString() {
-		String stallInfo = String.format("%-10s %-30s", name, dateOfOperation);
+		String stallInfo = String.format("%-20s %-60s", name, dateOfOperation);
 		
 		return stallInfo;
 	}
