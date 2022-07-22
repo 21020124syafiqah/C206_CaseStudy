@@ -46,6 +46,19 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 	}
 	
+	public static Stall inputStall() {
+		String name = Helper.readString("Enter stall name > ");
+		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
+		
+		Stall stall = new Stall(name, date);
+		return stall;
+	}
+	
+	public static void addStall(ArrayList<Stall> stallList, Stall stall) {
+		stallList.add(stall);
+	}
+	
+	
 	public static String retrieveAllStalls(ArrayList<Stall> stallList) {
 		String output = "";
 		
