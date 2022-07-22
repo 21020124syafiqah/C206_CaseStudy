@@ -14,6 +14,20 @@ public class C206_CaseStudy {
 		int option = 0;
 		
 		while (option != 4) {
+			C206_CaseStudy.menu();
+			option = Helper.readInt("Enter an option > ");
+			
+			if(option == 1) {
+				
+			}else if(option == 2) {
+				
+			}else if(option == 3) {
+				
+			}else if(option == 4) {
+				System.out.println("Goodbye!");
+			}else {
+				System.out.println("Invalid option!");
+			}
 			
 		}
 	}
@@ -23,7 +37,7 @@ public class C206_CaseStudy {
 		System.out.println("1.Add stall");
 		System.out.println("2.View stall");
 		System.out.println("3.Delete stall");
-		System.out.println("");
+		System.out.println("4.Quit");
 	}
 	
 	public static void setHeader(String header) {
