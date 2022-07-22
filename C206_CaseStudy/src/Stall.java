@@ -2,16 +2,16 @@ import java.util.Date;
 
 public class Stall {
 	private String name;
-	private Date dateOfOperation;
+	private String dateOfOperation;
 	
-	public Stall(String name, Date dateOfOperation) {
+	public Stall(String name, String dateOfOperation) {
 		this.name = name;
 		this.dateOfOperation = dateOfOperation;
 	}
 	public String getName() {
 		return name;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return dateOfOperation;
 	}
 
