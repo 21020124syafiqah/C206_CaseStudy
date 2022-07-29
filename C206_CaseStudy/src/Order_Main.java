@@ -80,7 +80,7 @@ public class Order_Main {
 		System.out.println("PayNow");
 		String name = Helper.readString("Enter name: ");
 		System.out.println("Enter this phone number to paynow: 86512390");
-		int phoneNum = Helper.readInt("Enter your mobile Number: ");
+		int phoneNum = Helper.readInt("Enter mobile Number: ");
 		
 		if(phoneNum == 86512390) {
 			System.out.println("Payment Successful");
