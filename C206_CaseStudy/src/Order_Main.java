@@ -79,15 +79,16 @@ public class Order_Main {
 	private static void payment() {
 		System.out.println("PayNow");
 		String name = Helper.readString("Enter name: ");
-		int phoneNum = Helper.readInt("Enter your mobile Number: ");		
-		int length = String.valueOf(phoneNum).length();
+		System.out.println("Enter this phone number to paynow: 86512390");
+		int phoneNum = Helper.readInt("Enter your mobile Number: ");
 		
-		if(length == 8) {
+		if(phoneNum == 86512390) {
 			System.out.println("Payment Successful");
 			
 		}else {
-			System.out.println("Payment failed.");
+			System.out.println("Payment failed!");
 		}
+		
 		
 		
 	}
