@@ -33,7 +33,6 @@ public class C206_CaseStudyTest {
 	}
 	
 	public void testAddStall() {
-		
 	}
 	
 	public void testViewStall() {
