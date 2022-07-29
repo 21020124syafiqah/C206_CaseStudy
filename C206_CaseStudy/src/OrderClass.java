@@ -5,7 +5,7 @@ public class OrderClass {
 	private String id;
 	private Double price;
 	
-	public OrderClass(String name, String id, Double price) {
+	public OrderClass(String name , String id, Double price) {
 		this.name = name;
 		this.id = id;
 		this.price = price;
