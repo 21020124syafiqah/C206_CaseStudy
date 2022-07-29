@@ -79,13 +79,16 @@ public class Order_Main {
 	private static void payment() {
 		System.out.println("PayNow");
 		String name = Helper.readString("Enter name: ");
-		int phoneNum = Helper.readInt("Enter your mobile Number: ");
+		int phoneNum = Helper.readInt("Enter your mobile Number: ");		
+		int length = String.valueOf(phoneNum).length();
 		
-		if(phoneNum <= 8) {
-			System.out.println("Payment successful");			
+		if(length == 8) {
+			System.out.println("Payment Successful");
+			
 		}else {
-			System.out.println("Payment unsuccessful, try again later.");
+			System.out.println("Payment failed.");
 		}
+		
 		
 	}
 }
