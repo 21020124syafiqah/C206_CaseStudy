@@ -29,6 +29,5 @@ public class FoodMenu {
 	public int getPrice() {
 		return price;
 	}
-	
 }
 
