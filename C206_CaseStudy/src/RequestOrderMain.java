@@ -4,7 +4,7 @@ public class RequestOrderMain {
 	private static ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
 
 	public static void main(String[] args) {
-		requestList.add(new RequestOrder(1,"Western Luck","S123","19-02-2005"));
+		requestList.add(new RequestOrder(1,"Western Luck","S123","19-02-2005")) ;
 		requestList.add(new RequestOrder(2,"Extremes","D153","19-03-2005"));
         start();
 	}
