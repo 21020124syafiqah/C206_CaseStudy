@@ -1,6 +1,6 @@
 
 public class RequestOrder {
-	private int orderId;
+	private int orderId ;
 	private String name;
 	private String id;
 	private String requestDate;
