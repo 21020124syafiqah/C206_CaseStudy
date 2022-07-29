@@ -1,5 +1,3 @@
-package c206;
-
 public class Order {
 	private String  name;
 	private String id;
