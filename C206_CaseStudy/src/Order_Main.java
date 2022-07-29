@@ -21,10 +21,8 @@ public class Order_Main {
 			}else if(option == 2) {
 				addOrders(orderList, enterorder());
 			}else if(option == 3) {
-				viewPaymentMethods();
-			}else if(option == 4) {
 				payment();
-			}else if(option == 5) {
+			}else if(option == 4) {
 				System.out.println("Thank you!");
 			}else {
 				System.out.println("Invalid option!");
@@ -73,26 +71,21 @@ public class Order_Main {
 
 	private static void addOrders(ArrayList<OrderClass> orderList, OrderClass order) {
 		orderList.add(order);
-		System.out.println("Item added");
+		System.out.println("Item added!");
 		
 	}
 	
-	
-	
-	
+
 	private static void payment() {
-		// TODO Auto-generated method stub
+		System.out.println("PayNow");
+		String name = Helper.readString("Enter name: ");
+		int phoneNum = Helper.readInt("Enter your mobile Number: ");
+		
+		if(phoneNum <= 8) {
+			System.out.println("Payment successful");			
+		}else {
+			System.out.println("Payment unsuccessful, try again later.");
+		}
 		
 	}
-
-	private static void viewPaymentMethods() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-
-	
-
-
 }
