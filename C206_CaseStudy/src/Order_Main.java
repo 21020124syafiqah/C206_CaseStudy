@@ -9,7 +9,7 @@ public class Order_Main {
 		ArrayList<Order> orderList = new ArrayList<Order>();
 		
 		orderList.add(new Order("Sushi", "S101"));
-		orderList.add(new Order("Chicken rice", "S102" ));
+		orderList.add(new Order("Chicken rice", "S102"  ));
 		
 		int option = -1;
 		while (option != 5) {
