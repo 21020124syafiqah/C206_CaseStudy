@@ -77,7 +77,7 @@ public class Order_Main {
 	
 
 	private static void payment() {
-		System.out.println("PayNow.");
+		System.out.println("PayNow");
 		String name = Helper.readString("Enter name: ");
 		int phoneNum = Helper.readInt("Enter your mobile Number: ");
 		
