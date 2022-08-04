@@ -14,26 +14,51 @@ public class C206_CaseStudy {
 		int option = 0;
 		
 		while (option != 4) {
-			C206_CaseStudy.menu();
+			C206_CaseStudy.memberMenu();
 			option = Helper.readInt("Enter an option > ");
 			
-			if(option == 1) {
-				addStall(stallList, inputStall());
+			if (option == 1) {
+				//syafiqah & lovette
+				C206_CaseStudy.CAmenu();
+				int CAoption = Helper.readInt("Enter an option > ");
+				if(CAoption == 1) {
+					addStall(stallList, inputStall());
+				}else if(CAoption == 2) {
+					viewAllStalls(stallList);
+				}else if(CAoption == 3) {
+					deleteStalls(stallList);
+				}else if(CAoption == 4) {
+					System.out.println("Goodbye!");
+				}else {
+					System.out.println("Invalid option!");
+				}
 			}else if(option == 2) {
-				viewAllStalls(stallList);
+				//jesica & hongye
+
+				int SOOption = Helper.readInt("Enter an option > ");
 			}else if(option == 3) {
-				deleteStalls(stallList);
+				//rishwin
+
+				int COption = Helper.readInt("Enter an option > ");
 			}else if(option == 4) {
 				System.out.println("Goodbye!");
+				
 			}else {
-				System.out.println("Invalid option!");
+				System.out.println("Option not available");
 			}
+			
 			
 		}
 	}
 	
-	public static void menu() {
+	public static void memberMenu() {
 		C206_CaseStudy.setHeader("Canteen Automation System");
+		System.out.println("1. Canteen Administrator");
+		System.out.println("2. Stall Operator");
+		System.out.println("3. Customer");
+	}
+	
+	public static void CAmenu() {
 		System.out.println("1.Add stall");
 		System.out.println("2.View stall");
 		System.out.println("3.Delete stall");

@@ -1,4 +1,3 @@
-package c206;
 
 public class Payment {
 	private int mobileNum;
