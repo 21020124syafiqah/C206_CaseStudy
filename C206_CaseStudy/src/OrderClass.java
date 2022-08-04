@@ -23,4 +23,7 @@ public class OrderClass {
 	public String getId() {
 		return id; 
 	}
+	public double getPrice() {
+		return price;
+	}
 }
