@@ -66,8 +66,6 @@ public class C206_CaseStudy {
 				}else {
 					System.out.println("Invalid option entered!");
 					}
-				
-
 			}else if(option == 3) {
 				//rishwin
 
@@ -234,5 +232,7 @@ public class C206_CaseStudy {
 				System.out.println("Food ID does not exist");
 			}
 		}
-	}
+
+}
+
 
