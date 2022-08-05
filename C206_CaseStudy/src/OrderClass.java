@@ -26,6 +26,8 @@ public class OrderClass {
 	}
 	public String getStall() {
 		return stall;
+	}
+	
 	public double getPrice() {
 		return price;
 	}
