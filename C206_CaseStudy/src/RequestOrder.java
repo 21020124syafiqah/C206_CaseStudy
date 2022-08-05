@@ -4,16 +4,18 @@ public class RequestOrder {
 	private String name;
 	private String id;
 	private String requestDate;
+	private String ingredients;
 	
-	public RequestOrder (int orderId, String name, String id, String requestDate) {
+	public RequestOrder (int orderId, String name, String id, String requestDate, String ingredients) {
 		this.orderId = orderId;
 		this.name = name;
 		this.id = id;
 		this.requestDate = requestDate;
+		this.ingredients = ingredients;
 	}
 	
 	public String toString() {
-		String requestInfo = String.format("%-10s %-20s %-10s %-10s",orderId, name, id, requestDate);
+		String requestInfo = String.format("%-10s %-20s %-10s %-10s %-10s",orderId, name, id, requestDate, ingredients);
 		
 		return requestInfo;
 	}
@@ -29,6 +31,10 @@ public class RequestOrder {
 
 	public String getId() {
 		return id;
+	}
+	
+	public String getIngredients() {
+		return ingredients;
 	}
 
 
