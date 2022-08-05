@@ -14,13 +14,12 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
+		
 		orderList.add(new OrderClass("S101","Sushi","Japanese Food Stall",5.00));
 		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
 		orderList.add(new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00));
-		
 		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
 		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
-
 		
 		int option = 0;
 		
@@ -98,8 +97,9 @@ public class C206_CaseStudy {
 					System.out.println("Option not available");
 				}
 			}
-			
 			}	
+			
+		
 		
 	
 	
@@ -199,9 +199,12 @@ public class C206_CaseStudy {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
-		
-		requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
-		System.out.println("Order Added Successfully!");	
+		if (requestList == null) {
+			requestList.add(new RequestOrder(1,name,id,date));
+		}else {
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+		}
+		System.out.println("Order Added Successfully!");		
 	}
 	public static void viewOrders(ArrayList<RequestOrder> requestList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n","Order ID","Name","ID","Request Date");
@@ -313,5 +316,3 @@ public class C206_CaseStudy {
 
 }
 }
-
-
