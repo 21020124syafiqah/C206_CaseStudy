@@ -56,10 +56,13 @@ public class C206_CaseStudy {
 					
 				}else if(SOoption == 4) {
 						viewPromotion(dailyPromotion);
+						
 				}else if(SOoption == 5) {
 						addPromotion(dailyPromotion);
+						
 				}else if(SOoption == 6) {
 						deletePromotion(dailyPromotion);
+						
 				}else if(SOoption == 7) {
 					System.out.println("Thank You!");
 					
