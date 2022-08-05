@@ -6,7 +6,7 @@ public class RequestOrder {
 	private String requestDate;
 	
 	public RequestOrder (int orderId, String name, String id, String requestDate) {
-		this.id = id;
+		this.orderId = orderId;
 		this.name = name;
 		this.id = id;
 		this.requestDate = requestDate;
