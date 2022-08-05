@@ -80,7 +80,7 @@ public class C206_CaseStudy {
 					System.out.println("Invalid option entered!");
 					}
 			}else if(option == 3) {
-				//Rishwin
+				//rishwin
 				
 				C206_CaseStudy.menu();
 				int COption = Helper.readInt("Enter an option > ");
