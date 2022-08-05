@@ -46,7 +46,9 @@ public class C206_CaseStudy {
 					viewAllStalls(stallList);
 					
 				}else if(CAoption == 3) {
-					deleteStalls(stallList);
+					viewAllStalls(stallList);
+					String deleteID = Helper.readString("Enter stall ID to delete > ");
+					deleteStalls(stallList, deleteID);
 					
 				} else if (CAoption == 4) {
 					viewFoodMenu(menuList);
@@ -184,10 +186,9 @@ public class C206_CaseStudy {
 	    System.out.println(output);
 	}
 	
-	public static boolean deleteStalls(ArrayList<Stall> stallList) {
+	public static boolean deleteStalls(ArrayList<Stall> stallList, String deleteID ) {
 		boolean isLoaned = false;
-		viewAllStalls(stallList);
-		String deleteID = Helper.readString("Enter stall ID to delete > ");
+		
 		for (int i = 0; i < stallList.size(); i++) {
 			if(stallList.get(i).getId().equalsIgnoreCase(deleteID)) {
 				String sure = Helper.readString("Are you sure you want to delete stall " + stallList.get(i).getId() + "? (y/n) > ");

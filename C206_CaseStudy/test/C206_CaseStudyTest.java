@@ -91,7 +91,10 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is a valid Stall arraylist to delete from", stallList);
 		String allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
 		
-		 = C206_CaseStudy.deleteStalls(stallList);
+		boolean ok = C206_CaseStudy.deleteStalls(stallList);
+		assertTrue("Test if stall is ok to delete?", ok);
+		
+		assertFalse("Test that non-existing stall cannot be deleted?", ok);
 		
 		
 		
