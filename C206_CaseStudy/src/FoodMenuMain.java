@@ -60,14 +60,20 @@ public class FoodMenuMain {
 		System.out.println("4. Quit");
 	}
 	
+	private static String retrieveAllMenu(ArrayList<FoodMenu> menuList) {
+		String output = "";
+		
+		for (int i = 0; i < menuList.size(); i++) {
+			output += String.format("%-25s", menuList.get(i).toString());
+		}
+		return output;
+	}
+	
 	private static void viewFoodMenu(ArrayList<FoodMenu> menuList) {
 		
 		String output = String.format("%-20s %-5s\n", "Name", "Price");
-		
-		for (FoodMenu itemDetails : menuList) {
-			output += String.format("%-25s", itemDetails.toString());
-		}
-		System.out.println(output);		
+		output += retrieveAllMenu(menuList);
+		System.out.println(output);
 	}
 	
 	private static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
@@ -97,7 +103,7 @@ public class FoodMenuMain {
 	
 	private static void deleteFromFoodMenu(ArrayList<FoodMenu> menuList) { 
 		
-		String deleteItem = Helper.readString("Entert the name of the food item you wish to delete > ");
+		String deleteItem = Helper.readString("Enter the name of the food item you wish to delete > ");
 		boolean isDeleted = false;
 		
 		for (int i = 0; i < menuList.size(); i++) {
