@@ -157,6 +157,80 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
+	public void testDeleteFromFoodMenu() {
+		assertNotNull("Test if there is valid FoodMenu arraylist to delete from", menuList);
+		
+		// after adding 1 item to an empty arraylist, test that the size of the list is 1
+		C206_CaseStudy.addToFoodMenu(menuList, F1);
+		assertEquals("Test if the FoodMenu arraylist size is 1?", 1, menuList.size());
+		// remove the item from the arraylist, test that the size of the list is 0
+		menuList.remove(0);
+		assertEquals("Test if the FoodMenu arraylist size is 0?", 0, menuList.size());
+		
+		//check if the item still exists in the arraylist
+		boolean exists = true;
+		for (FoodMenu item : menuList) {
+			if(item.getName().equals(F1)) {
+				exists = false;
+			}
+		}
+		assertTrue(exists);
+		
+		// after adding 2 items to an arraylist, test that the size of the list is 2
+		C206_CaseStudy.addToFoodMenu(menuList, F1);
+		C206_CaseStudy.addToFoodMenu(menuList, F2);
+		assertEquals("Test if the FoodMenu arraylist size is 2?", 2, menuList.size());
+		
+		// remove the 1st item from the arraylist, test that the size of the list is 1
+		menuList.remove(0);
+		assertEquals("Test if the FoodMenu arraylist size is 1?", 1, menuList.size());
+		
+		//check if the item that was deleted still exists in the arraylist
+		exists = true;
+		for (FoodMenu item : menuList) {
+			if(item.getName().equals(F1)) {
+				exists = false;
+			}
+		}
+		assertTrue(exists);
+		
+		// check whether the item that was not deleted still exists in the arraylist
+		for (FoodMenu item : menuList) {
+			if (item.getName().equals(F2)) {
+				exists = true;
+			}
+		}
+		assertTrue(exists);		
+		
+		// after adding 3 items to an arraylist, test that the size of the list is 3
+		// !! F2 is not added into the menu because it is already in the arraylist !!
+		C206_CaseStudy.addToFoodMenu(menuList, F1);
+		C206_CaseStudy.addToFoodMenu(menuList, F3);
+		assertEquals("Test if the FoodMenu arraylist size is 3?", 3, menuList.size());
+				
+		// remove the 1st item from the arraylist, test that the size of the list is 2
+		menuList.remove(0);
+		assertEquals("Test if the FoodMenu arraylist size is 2?", 2, menuList.size());
+				
+		//check if the item that was deleted still exists in the arraylist
+		exists = true;
+		for (FoodMenu item : menuList) {
+			if(item.getName().equals(F2)) {
+				exists = false;
+			}
+		}
+		assertTrue(exists);
+				
+		// check whether the items that were not deleted still exists in the arraylist
+		for (FoodMenu item : menuList) {
+			if (item.getName().equals(F1) && item.getName().equals(F3)) {
+				exists = true;
+			}
+		}
+		assertTrue(exists);		
+	}
+	
+	@Test
 	public void testAddOrder() {
 		assertNotNull("Check if there is a valid OrderClass arraylist to add to", orderList);
 		
