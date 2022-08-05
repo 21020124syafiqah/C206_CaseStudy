@@ -45,12 +45,16 @@ public class C206_CaseStudy {
 				int SOoption = Helper.readInt("Enter option > ");
 				if(SOoption == 1) {
 					addOrder(requestList);
+					
 				}else if(SOoption == 2) {
 					viewOrders(requestList);
+					
 				}else if(SOoption == 3) {
 					deleteOrders(requestList);
+					
 				}else if(SOoption == 4) {
 					System.out.println("Thank You!");
+					
 				}else {
 					System.out.println("Invalid option entered!");
 				}
