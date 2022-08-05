@@ -411,7 +411,7 @@ public class C206_CaseStudy {
         for (int r = 0; r < orderList.size(); r++) {
 			if (id.equalsIgnoreCase(orderList.get(r).getId())) {
 				found = true;
-				orderList.remove(id);
+				orderList.remove(r);
 				System.out.println("Successfully deleted");
 			}
 		}
