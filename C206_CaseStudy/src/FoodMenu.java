@@ -17,7 +17,7 @@ public class FoodMenu {
 	}
 	
 	public String toString() {
-		String output = String.format("%-20s $%-5d\n", name, price);
+		String output = String.format("%-20s $%-5d\n", name.toUpperCase(), price);
 		
 		return output;
 	}
