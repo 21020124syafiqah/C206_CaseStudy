@@ -219,7 +219,6 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-	
 	public static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
 		
 		String newName = Helper.readString("Enter the name of the new food item > ");
