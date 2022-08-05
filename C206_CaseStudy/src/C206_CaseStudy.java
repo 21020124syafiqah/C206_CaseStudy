@@ -11,6 +11,7 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
 		
+		
 		int option = 0;
 		
 		while (option != 4) {
@@ -21,14 +22,19 @@ public class C206_CaseStudy {
 				//syafiqah & lovette
 				C206_CaseStudy.CAmenu();
 				int CAoption = Helper.readInt("Enter an option > ");
+				
 				if(CAoption == 1) {
 					addStall(stallList, inputStall());
+					
 				}else if(CAoption == 2) {
 					viewAllStalls(stallList);
+					
 				}else if(CAoption == 3) {
 					deleteStalls(stallList);
+					
 				}else if(CAoption == 4) {
 					System.out.println("Goodbye!");
+					
 				}else {
 					System.out.println("Invalid option!");
 				}
