@@ -6,7 +6,8 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		ArrayList<Stall> stallList = new ArrayList<Stall>();
 		ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
-		
+		ArrayList<DailyPromotion> dailyPromotion = new ArrayList<DailyPromotion>();
+
 		stallList.add(new Stall("Western cuisine","S1", "17-09-2022"));
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
@@ -37,6 +38,7 @@ public class C206_CaseStudy {
 				//jesica & hongye
 				SOmenu();
 				int SOoption = Helper.readInt("Enter option > ");
+				
 				if(SOoption == 1) {
 					addOrder(requestList);
 				}else if(SOoption == 2) {
@@ -44,10 +46,17 @@ public class C206_CaseStudy {
 				}else if(SOoption == 3) {
 					deleteOrders(requestList);
 				}else if(SOoption == 4) {
+						viewPromotion(dailyPromotion);
+				}else if(SOoption == 5) {
+						addPromotion(dailyPromotion);
+				}else if(SOoption == 6) {
+						deletePromotion(dailyPromotion);
+				}else if(SOoption == 7) {
 					System.out.println("Thank You!");
 				}else {
 					System.out.println("Invalid option entered!");
-				}
+					}
+				
 
 			}else if(option == 3) {
 				//rishwin
@@ -136,12 +145,15 @@ public class C206_CaseStudy {
 
 	public static void SOmenu() {
 		Helper.line(30, "=");
-		System.out.println("Request Order Main");
+		System.out.println("Request Order Main / Daily Promotion Main");
 		Helper.line(30, "=");
 		System.out.println("1.Add Order");
 		System.out.println("2.View Orders");
 		System.out.println("3.Delete Orders");
-		System.out.println("4.Quit");
+		System.out.println("4.View Daily Promotion");
+		System.out.println("5.Add Daily Promotion");
+		System.out.println("6.Delete Promotion");
+		System.out.println("7.Quit");
 		
 	}
 	public static void addOrder(ArrayList<RequestOrder> requestList) {
@@ -176,6 +188,41 @@ public class C206_CaseStudy {
 			System.out.println("Such order id does not exist");
 		}
 	}
-
-}
+	private static void viewPromotion(ArrayList<DailyPromotion> dailyPromotion) {
+		String output = "";
+		output += String.format("%-15s %-10s %-10s\n","NAME","ID","DISCOUNTED PRICE" );
+		
+		for(DailyPromotion p : dailyPromotion) {
+			output += String.format("%-15s %-10s %-10.2f\n", p.getName(),p.getId(),(p.getPrice()-p.getDiscount()));
+		}
+		System.out.println(output);
+	}
+	private static void addPromotion(ArrayList<DailyPromotion> dailyPromotion) {
+		String name = Helper.readString("Enter food name > ");
+		String id = Helper.readString("Enter food ID > ");
+		double price = Helper.readDouble("Enter the food price without discount");
+		double discount = Helper.readDouble("Enter the food discount given");
+		
+		dailyPromotion.add(new DailyPromotion(name,id,price,discount));
+		System.out.println("Promotion Added Successfully!");	
+	}
+	private static void deletePromotion(ArrayList<DailyPromotion> dailyPromotion) {
+		Helper.line(60,"=");
+		viewPromotion(dailyPromotion);
+		Helper.line(60,"=");
+		boolean isFound = false;
+		String DelID = Helper.readString("Enter Food ID to delete > ");
+			
+			for(int i = 0; i < dailyPromotion.size(); i++) {
+				String u = dailyPromotion.get(i).getId();
+				if(DelID.equalsIgnoreCase(u)) {
+					dailyPromotion.remove(i);
+					isFound = true;
+				}
+			}
+			if (isFound == false){
+				System.out.println("Food ID does not exist");
+			}
+		}
+	}
 
