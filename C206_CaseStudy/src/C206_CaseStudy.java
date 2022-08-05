@@ -280,16 +280,23 @@ public class C206_CaseStudy {
 		System.out.println("7.Quit");
 		
 	}
-	public static void addOrder(ArrayList<RequestOrder> requestList) {
+	public static RequestOrder inputOrder(ArrayList<RequestOrder> requestList) {
+		RequestOrder req1 = null;
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
 		String ingredients = Helper.readString("Enter ingredients to order > ");
 		if (requestList == null) {
-			requestList.add(new RequestOrder(1,name,id,date, ingredients));
+			req1 = new RequestOrder(0,name,id,date,ingredients);
 		}else {
-			requestList.add(new RequestOrder(requestList.size()+1,name,id,date,ingredients));
+			req1 = new RequestOrder(requestList.size()+1,name,id,date,ingredients);
 		}
+		
+		return req1;
+
+	}
+	public static void addOrder(ArrayList<RequestOrder> requestList) {
+		requestList.add(inputOrder(requestList));
 		System.out.println("Order Added Successfully!");	
 	}
 	public static void viewOrders(ArrayList<RequestOrder> requestList) {
