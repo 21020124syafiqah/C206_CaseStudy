@@ -113,8 +113,28 @@ public class C206_CaseStudyTest {
 	@Test 
 	public void testViewFoodMenu() {
 		assertNotNull("Test if there is valid FoodMenu arraylist to view from", menuList);
+		
+		// test if the list of FoodMenu retrieved is empty
 		String allMenuItem = C206_CaseStudy.retrieveAllMenu(menuList);
+		String testOutput = "";
+		assertEquals("Check that viewFoodMenu", testOutput, allMenuItem);
+		
+		// after adding 3 items to an empty list, test if the size of the list is 3
+		C206_CaseStudy.addToFoodMenu(menuList, F1);
+		C206_CaseStudy.addToFoodMenu(menuList, F2);
+		C206_CaseStudy.addToFoodMenu(menuList, F3);
+		assertEquals("Test if the size of the FoodMenu arraylist is 3?", 3, menuList.size());
+		
+		// test whether the expected output is the same as the list of FoodMenu retrieved 
+		allMenuItem = C206_CaseStudy.retrieveAllMenu(menuList);
+		
+		testOutput = String.format("%-20s $%-5d\n", "Fried Chicken", 6);
+		testOutput += String.format("%-20s $%-5d\n", "Tonkotsu Ramen", 5);
+		testOutput += String.format("%-20s $%-5d\n", "Dumplings", 4);
+		
+		assertEquals("Check that viewFoodMenu", testOutput.toUpperCase(), allMenuItem);
 	}
+	
 	
 	@Test
 	public void testAddOrder() {
