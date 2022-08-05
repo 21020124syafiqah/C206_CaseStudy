@@ -275,7 +275,7 @@ public class C206_CaseStudy {
 		System.out.println("7.Quit");
 		
 	}
-	private static void addOrder(ArrayList<RequestOrder> requestList) {
+	public static void addOrder(ArrayList<RequestOrder> requestList) {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
