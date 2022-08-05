@@ -13,6 +13,12 @@ public class C206_CaseStudyTest {
 	
 	private ArrayList<Stall> stallList;
 	
+	ArrayList<OrderClass> orderList;
+	
+	private OrderClass OC1;
+	private OrderClass OC2;
+	private OrderClass OC3;
+	
 	private FoodMenu F1;
 	private FoodMenu F2;
 	private FoodMenu F3;
@@ -45,6 +51,12 @@ public class C206_CaseStudyTest {
 		F3 = new FoodMenu("Dumplings", 4);
 		
 		menuList = new ArrayList<FoodMenu>();
+		
+		OC1 = new OrderClass("S101","Sushi","Japanese Food Stall",5.00);
+		OC2 = new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50);
+		OC3 = new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00);
+		
+		orderList = new ArrayList<OrderClass>();
 		
 	}
 	
@@ -106,6 +118,31 @@ public class C206_CaseStudyTest {
 		assertNotNull("Test if there is valid FoodMenu arraylist to view from", menuList);
 		
 		String allMenuItem = C206_CaseStudy.retrieveAllMenu(menuList);
+	}
+	
+	@Test
+	public void testAddOrder() {
+		assertNotNull("Check if there is a valid OrderClass arraylist to add to", orderList);
+		
+		C206_CaseStudy.addOrders(orderList, OC1);
+		assertEquals("Check that OrderClass arraylist size is 1", 1, orderList.size());
+		assertSame("Check that OrderClass is added", OC1, orderList.get(0));
+		
+		C206_CaseStudy.addOrders(orderList, OC2);
+		assertEquals("Check that OrderClass arraylist size is 2", 2, orderList.size());
+		assertSame("Check that OrderClass is added", OC2, orderList.get(1));
+		
+		C206_CaseStudy.addOrders(orderList, OC3);
+		assertEquals("Check that OrderClass arraylist size is 3", 3, orderList.size());
+		assertSame("Check that OrderClass is added", OC3, orderList.get(2));
+	}
+	
+	@Test 
+	public void testviewAllOrder() {
+		assertNotNull("Test if there is valid OrderClass arraylist to view from", orderList);
+		String allOrders = C206_CaseStudy.retrieveAllOrders(orderList);
+		
+		
 	}
 
 }
