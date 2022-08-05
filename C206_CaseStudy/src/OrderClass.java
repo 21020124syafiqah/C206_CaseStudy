@@ -5,7 +5,7 @@ public class OrderClass {
 	private String stall;
 	private Double price;
 	
-	public OrderClass(String name , String id,String stall, Double price) {
+	public OrderClass(String id , String name,String stall, Double price) {
 		this.name = name;
 		this.id = id;
 		this.price = price;
@@ -20,14 +20,12 @@ public class OrderClass {
 	public String getName() {
 		return name;
 	}
-
 	public String getId() {
 		return id; 
 	}
 	public String getStall() {
 		return stall;
 	}
-	
 	public double getPrice() {
 		return price;
 	}
