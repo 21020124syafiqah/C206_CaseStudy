@@ -14,7 +14,7 @@ public class OrderClass {
 	public String toString() {
 		String orderInfo = String.format("%-20s %-20s %-30s %-60s\n", name, id, stall, price);
 		
-		return orderInfo ;
+		return orderInfo;
 	}
 
 	public String getName() {
@@ -26,8 +26,6 @@ public class OrderClass {
 	}
 	public String getStall() {
 		return stall;
-	}
-	
 	public double getPrice() {
 		return price;
 	}
