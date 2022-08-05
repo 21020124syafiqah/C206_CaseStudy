@@ -2,12 +2,14 @@
 public class OrderClass {
 	private String  name;
 	private String id;
+	private String stall;
 	private Double price;
 	
-	public OrderClass(String name , String id, Double price) {
+	public OrderClass(String name , String id,String stall, Double price) {
 		this.name = name;
 		this.id = id;
 		this.price = price;
+		this.stall = stall;
 	}
 	public String toString() {
 		String orderInfo = String.format("%-20s %-10s %-10s\n", name, id, price);
@@ -22,6 +24,8 @@ public class OrderClass {
 	public String getId() {
 		return id; 
 	}
+	public String getStall() {
+		return stall;
 	public double getPrice() {
 		return price;
 	}

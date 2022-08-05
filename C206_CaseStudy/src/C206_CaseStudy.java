@@ -13,6 +13,7 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
 		
+		
 		int option = 0;
 		
 		while (option != 4) {
@@ -23,14 +24,19 @@ public class C206_CaseStudy {
 				//syafiqah & lovette
 				C206_CaseStudy.CAmenu();
 				int CAoption = Helper.readInt("Enter an option > ");
+				
 				if(CAoption == 1) {
 					addStall(stallList, inputStall());
+					
 				}else if(CAoption == 2) {
 					viewAllStalls(stallList);
+					
 				}else if(CAoption == 3) {
 					deleteStalls(stallList);
+					
 				}else if(CAoption == 4) {
 					System.out.println("Goodbye!");
+					
 				}else {
 					System.out.println("Invalid option!");
 				}
@@ -41,10 +47,13 @@ public class C206_CaseStudy {
 				
 				if(SOoption == 1) {
 					addOrder(requestList);
+					
 				}else if(SOoption == 2) {
 					viewOrders(requestList);
+					
 				}else if(SOoption == 3) {
 					deleteOrders(requestList);
+					
 				}else if(SOoption == 4) {
 						viewPromotion(dailyPromotion);
 				}else if(SOoption == 5) {
@@ -53,6 +62,7 @@ public class C206_CaseStudy {
 						deletePromotion(dailyPromotion);
 				}else if(SOoption == 7) {
 					System.out.println("Thank You!");
+					
 				}else {
 					System.out.println("Invalid option entered!");
 					}
