@@ -34,7 +34,7 @@ public class FoodMenuMain {
 				viewFoodMenu(menuList);
 				
 			} else if (menuOption == 2) {
-				addToFoodMenu(menuList);
+				addToFoodMenu(menuList, inputFood(menuList));
 				
 			} else if (menuOption == 3) {
 				deleteFromFoodMenu(menuList);
@@ -76,10 +76,10 @@ public class FoodMenuMain {
 		System.out.println(output);
 	}
 	
-	private static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
+	private static FoodMenu inputFood(ArrayList<FoodMenu> menuList) {
 		
 		String newName = Helper.readString("Enter the name of the new food item > ");
-		
+		FoodMenu newFood = new FoodMenu("", 0);
 		
 		for (int i = 0; i < menuList.size(); i++) {
 			if (! menuList.get(i).getName().equalsIgnoreCase(newName)) {
@@ -99,11 +99,20 @@ public class FoodMenuMain {
 			}	
 			break;
 		}
+		
+		return newFood;
 	}
 	
-	private static void deleteFromFoodMenu(ArrayList<FoodMenu> menuList) { 
+	private static void addToFoodMenu(ArrayList<FoodMenu> menuList, FoodMenu newFood) {
+		if (! newFood.getName().equals("") && newFood.getPrice() > 0) {
+			menuList.add(newFood);
+		}
+	}
+	
+	
+	private static void deleteFromFoodMenu(ArrayList<FoodMenu> menuList) {
 		
-		String deleteItem = Helper.readString("Enter the name of the food item you wish to delete > ");
+		String deleteItem = Helper.readString("Entert the name of the food item you wish to delete > ");
 		boolean isDeleted = false;
 		
 		for (int i = 0; i < menuList.size(); i++) {
