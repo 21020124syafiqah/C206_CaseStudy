@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class C206_CaseStudy {
 
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Stall> stallList = new ArrayList<Stall>();
@@ -23,8 +24,8 @@ public class C206_CaseStudy {
 		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
 		orderList.add(new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00));
 		
-
 		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
+		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
 		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
 
 		int option = 0;
@@ -97,23 +98,24 @@ public class C206_CaseStudy {
 				
 				C206_CaseStudy.menu();
 				int COption = Helper.readInt("Enter an option > ");
+				
 				if(COption == 1) {
 					viewAllOrder(orderList);
+				
 				}else if(COption == 2) {
-					addOrders(orderList, enterorder());
+					addOrders(orderList, order);
+			
 				}else if(COption == 3) {
 					payment();
-				}else if(option == 4) {
+				}else if(COption == 4) 
 				System.out.println("Goodbye!");
 				
-			}else {
-				System.out.println("Option not available");
+				}else {
+					System.out.println("Option not available");
+				}
 			}
+			}	
 			
-			
-		}
-		}
-	}
 	
 	public static void memberMenu() {
 		C206_CaseStudy.setHeader("Canteen Automation System");
@@ -202,15 +204,22 @@ public class C206_CaseStudy {
 	}
 	
 // -----------------------------------------FOOD MENU CODE----------------------------------------------
+	public static String retrieveAllMenu(ArrayList<FoodMenu> menuList) {
+		String output = "";
+		
+		for (int i = 0; i < menuList.size(); i++) {
+			output += String.format("%-25s", menuList.get(i).toString());
+		}
+		return output;
+	}
+	
 	public static void viewFoodMenu(ArrayList<FoodMenu> menuList) {
 		
 		String output = String.format("%-20s %-5s\n", "Name", "Price");
-		
-		for (FoodMenu itemDetails : menuList) {
-			output += String.format("%-25s", itemDetails.toString());
-		}
-		System.out.println(output);		
+		output += retrieveAllMenu(menuList);
+		System.out.println(output);
 	}
+	
 	
 	public static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
 		
@@ -373,7 +382,7 @@ public class C206_CaseStudy {
 		return order;
 	}
 	
-	private static void addOrders(ArrayList<OrderClass> orderList, Object enterorder) {
+	private static void addOrders(ArrayList<OrderClass> orderList, OrderClass order) {
 		orderList.add(order);
 		System.out.println("Item added!");
 	}
@@ -390,7 +399,6 @@ public class C206_CaseStudy {
 		}else {
 			System.out.println("Payment failed!");
 		}
-		
+	}
 
-}
 }
