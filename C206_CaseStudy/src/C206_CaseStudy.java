@@ -5,6 +5,7 @@ public class C206_CaseStudy {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Stall> stallList = new ArrayList<Stall>();
+		ArrayList<FoodMenu> menuList = new ArrayList<FoodMenu>();
 		ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
 		ArrayList<DailyPromotion> dailyPromotion = new ArrayList<DailyPromotion>();
 
@@ -36,11 +37,20 @@ public class C206_CaseStudy {
 				}else if(CAoption == 3) {
 					deleteStalls(stallList);
 					
-				}else if(CAoption == 4) {
-					System.out.println("Goodbye!");
+				} else if (CAoption == 4) {
+					viewFoodMenu(menuList);
 					
-				}else {
-					System.out.println("Invalid option!");
+				} else if (CAoption == 5) {
+					addToFoodMenu(menuList);
+					
+				} else if (CAoption == 6) {
+					deleteFromFoodMenu(menuList);
+					
+				} else if (CAoption == 7) {
+					System.out.println("Quit");
+					
+				} else {
+					System.out.println("Invalid option");
 				}
 			}else if(option == 2) {
 				//jesica & hongye
@@ -92,12 +102,16 @@ public class C206_CaseStudy {
 		System.out.println("2. Stall Operator");
 		System.out.println("3. Customer");
 	}
-	
+
+// =========================================CANTEEN ADMINISTRATOR CODE=========================================
 	public static void CAmenu() {
 		System.out.println("1.Add stall");
 		System.out.println("2.View stall");
 		System.out.println("3.Delete stall");
-		System.out.println("4.Quit");
+		System.out.println("4. View Food Menu");
+		System.out.println("5. Add into Food Menu");
+		System.out.println("6. Delete from Food Menu");
+		System.out.println("7.Quit");
 	}
 	
 	public static void setHeader(String header) {
@@ -106,6 +120,7 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 	}
 	
+// -----------------------------------------STALL CODE---------------------------------------------
 	public static Stall inputStall() {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
@@ -154,8 +169,68 @@ public class C206_CaseStudy {
 				}
 		}
 	}
+			
 	}
-
+	
+// -----------------------------------------FOOD MENU CODE----------------------------------------------
+	public static void viewFoodMenu(ArrayList<FoodMenu> menuList) {
+		
+		String output = String.format("%-20s %-5s\n", "Name", "Price");
+		
+		for (FoodMenu itemDetails : menuList) {
+			output += String.format("%-25s", itemDetails.toString());
+		}
+		System.out.println(output);		
+	}
+	
+	public static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
+		
+		String newName = Helper.readString("Enter the name of the new food item > ");
+		
+		for (int i = 0; i < menuList.size(); i++) {
+			if (! menuList.get(i).getName().equalsIgnoreCase(newName)) {
+				
+				int newPrice = Helper.readInt("Enter price of the new food item (must be between $3 - $15) > ");
+				
+				if (newPrice >= 3 && newPrice <= 15) {
+					menuList.add(new FoodMenu(newName, newPrice));
+					System.out.println("Food item has been successfully added to the menu.");
+					
+				} else {
+					System.out.println("Price entered does not meet the condition.");
+				}
+				
+			} else {
+				System.out.println("Cannot add duplicate food item into menu.");
+			}	
+			break;
+		}
+	}
+	
+	public static void deleteFromFoodMenu(ArrayList<FoodMenu> menuList) {
+		
+		String deleteItem = Helper.readString("Entert the name of the food item you wish to delete > ");
+		boolean isDeleted = false;
+		
+		for (int i = 0; i < menuList.size(); i++) {
+			if (menuList.get(i).getName().equalsIgnoreCase(deleteItem)) {
+				char confirm = Helper.readChar("Confirm deletion of " + deleteItem + "? (y/n) > ");
+				
+				if (confirm == 'y' || confirm == 'Y') {
+					menuList.remove(i);
+					isDeleted = true;
+					System.out.println("Food item has been successfully removed from the menu.");
+					break;
+				} 
+			} 
+		}
+		
+		if (isDeleted == false) {
+			System.out.println("Cannot delete items that are not currently in the menu.");
+		}
+	}
+	
+// =========================================STALL OPERATOR CODE=========================================
 	public static void SOmenu() {
 		Helper.line(30, "=");
 		System.out.println("Request Order Main / Daily Promotion Main");
