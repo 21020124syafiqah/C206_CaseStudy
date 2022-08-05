@@ -116,7 +116,6 @@ public class C206_CaseStudyTest {
 	@Test 
 	public void testViewFoodMenu() {
 		assertNotNull("Test if there is valid FoodMenu arraylist to view from", menuList);
-		
 		String allMenuItem = C206_CaseStudy.retrieveAllMenu(menuList);
 	}
 	
