@@ -54,7 +54,7 @@ public class C206_CaseStudy {
 					viewFoodMenu(menuList);
 					
 				} else if (CAoption == 5) {
-					addToFoodMenu(menuList);
+					addToFoodMenu(menuList, inputFood(menuList));
 					
 				} else if (CAoption == 6) {
 					deleteFromFoodMenu(menuList);
@@ -231,9 +231,10 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-	public static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
+	public static FoodMenu inputFood(ArrayList<FoodMenu> menuList) {
 		
 		String newName = Helper.readString("Enter the name of the new food item > ");
+		FoodMenu newFood = new FoodMenu("", 0);
 		
 		for (int i = 0; i < menuList.size(); i++) {
 			if (! menuList.get(i).getName().equalsIgnoreCase(newName)) {
@@ -253,7 +254,16 @@ public class C206_CaseStudy {
 			}	
 			break;
 		}
+		
+		return newFood;
 	}
+	
+	public static void addToFoodMenu(ArrayList<FoodMenu> menuList, FoodMenu newFood) {
+		if (! newFood.getName().equals("") && newFood.getPrice() > 0) {
+			menuList.add(newFood);
+		}
+	}
+	
 	
 	public static void deleteFromFoodMenu(ArrayList<FoodMenu> menuList) {
 		
