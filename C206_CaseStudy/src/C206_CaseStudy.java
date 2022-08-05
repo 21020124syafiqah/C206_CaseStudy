@@ -104,11 +104,13 @@ public class C206_CaseStudy {
 					viewAllOrder(orderList);
 				
 				}else if(COption == 2) {
-					//addOrders(orderList, enterorder());
+					addOrders(orderList, enterorder());
 			
 				}else if(COption == 3) {
-					payment();
+					removeItem(orderList);;
 				}else if(COption == 4) 
+						payment();
+				}else if(COption == 5) {
 				System.out.println("Goodbye!");
 				
 				}else {
@@ -141,8 +143,9 @@ public class C206_CaseStudy {
 		System.out.println("Canteen Automation System");
 		System.out.println("1.View all orders");
 		System.out.println("2.Add order");
-		System.out.println("3.Make Payment");
-		System.out.println("4.Quit");	
+		System.out.println("3.Delete order");
+		System.out.println("4.Make Payment");
+		System.out.println("5.Quit");	
 		
 	}
 	
@@ -383,13 +386,13 @@ public class C206_CaseStudy {
 	    System.out.println(output);
 	}
 	
-	private static Object enterorder() {
+	private static OrderClass enterorder() {
 		String id = Helper.readString("Enter item ID > ");
 		String name = Helper.readString("Enter item name > ");
 		String stall = Helper.readString("Enter the stall name > ");
 		Double price = Helper.readDouble("Enter price > ");
 		
-		OrderClass order = new OrderClass(name, id, stall, price);
+		OrderClass order = new OrderClass(id,name, stall, price);
 		return order;
 	}
 	
@@ -398,6 +401,26 @@ public class C206_CaseStudy {
 		System.out.println("Item added!");
 	}
 	
+	private static void removeItem(ArrayList<OrderClass> orderList) {
+		System.out.println("DELETE ORDER");
+        String id = Helper.readString("Enter Order ID > ");
+    
+        
+        
+        boolean found = false;
+        for (int r = 0; r < orderList.size(); r++) {
+			if (id.equalsIgnoreCase(orderList.get(r).getId())) {
+				found = true;
+				orderList.remove(id);
+				System.out.println("Successfully deleted");
+			}
+		}
+        if (found == false) {
+            System.out.println("Invalid Order!");
+          }
+        
+	
+}
 	private static void payment() {
 		System.out.println("PayNow");
 		String name = Helper.readString("Enter name: ");
