@@ -14,6 +14,10 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
+		menuList.add(new FoodMenu("Fried Chicken", 6));
+		menuList.add(new FoodMenu("Tonkotsu Ramen", 5));
+		menuList.add(new FoodMenu("Dumplings", 4));
+		
 
 		orderList.add(new OrderClass("S101","Sushi","Japanese Food Stall",5.00));
 		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
@@ -23,8 +27,6 @@ public class C206_CaseStudy {
 		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
 		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
 
-
-		
 		int option = 0;
 		
 		while (option != 4) {
