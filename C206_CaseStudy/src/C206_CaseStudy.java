@@ -107,17 +107,21 @@ public class C206_CaseStudy {
 					addOrders(orderList, enterorder());
 			
 				}else if(COption == 3) {
-					removeItem(orderList);;
-				}else if(COption == 4) 
-						payment();
+					removeItem(orderList);
+					
+				}else if(COption == 4) {
+					payment();
+				
 				}else if(COption == 5) {
-				System.out.println("Goodbye!");
+					System.out.println("Goodbye!");
 				
 				}else {
 					System.out.println("Option not available");
 				}
+			
 			}
-			}	
+		}
+	}
 			
 	
 	public static void memberMenu() {
