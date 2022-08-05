@@ -6,7 +6,8 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		ArrayList<Stall> stallList = new ArrayList<Stall>();
 		ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
-		
+		ArrayList<DailyPromotion> dailyPromotion = new ArrayList<DailyPromotion>();
+
 		stallList.add(new Stall("Western cuisine","S1", "17-09-2022"));
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
@@ -65,9 +66,6 @@ public class C206_CaseStudy {
 				}else {
 					System.out.println("Invalid option entered!");
 					}
-				
-
-
 			}else if(option == 3) {
 				//rishwin
 				
@@ -198,7 +196,7 @@ public class C206_CaseStudy {
 			System.out.println("Such order id does not exist");
 		}
 	}
-			private static void viewPromotion(ArrayList<DailyPromotion> dailyPromotion) {
+	private static void viewPromotion(ArrayList<DailyPromotion> dailyPromotion) {
 		String output = "";
 		output += String.format("%-15s %-10s %-10s\n","NAME","ID","DISCOUNTED PRICE" );
 		
@@ -234,5 +232,7 @@ public class C206_CaseStudy {
 				System.out.println("Food ID does not exist");
 			}
 		}
+
 }
+
 
