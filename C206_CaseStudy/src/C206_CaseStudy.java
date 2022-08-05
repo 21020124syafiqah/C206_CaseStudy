@@ -24,9 +24,8 @@ public class C206_CaseStudy {
 		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
 		orderList.add(new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00));
 		
-		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
-		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
-		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
+		requestList.add(new RequestOrder(1,"Western Luck","S123","19-02-2005","onions")) ;
+		requestList.add(new RequestOrder(2,"Extremes","D153","19-03-2005","tomatoes"));
 
 		int option = 0;
 		
@@ -280,12 +279,13 @@ public class C206_CaseStudy {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
+		String ingredients = Helper.readString("Enter ingredients to order > ");
 		if (requestList == null) {
-			requestList.add(new RequestOrder(1,name,id,date));
+			requestList.add(new RequestOrder(1,name,id,date, ingredients));
 		}else {
-			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date,ingredients));
 		}
-		System.out.println("Order Added Successfully!");		
+		System.out.println("Order Added Successfully!");	
 	}
 	public static void viewOrders(ArrayList<RequestOrder> requestList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n","Order ID","Name","ID","Request Date");
