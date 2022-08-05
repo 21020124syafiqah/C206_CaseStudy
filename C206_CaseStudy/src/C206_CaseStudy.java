@@ -8,13 +8,21 @@ public class C206_CaseStudy {
 		ArrayList<FoodMenu> menuList = new ArrayList<FoodMenu>();
 		ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
 		ArrayList<DailyPromotion> dailyPromotion = new ArrayList<DailyPromotion>();
-
+		ArrayList<OrderClass> orderList = new ArrayList<OrderClass>();
+		
 		stallList.add(new Stall("Western cuisine","S1", "17-09-2022"));
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
+
+		orderList.add(new OrderClass("S101","Sushi","Japanese Food Stall",5.00));
+		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
+		orderList.add(new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00));
+		
+
 		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
 		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
+
 
 		
 		int option = 0;
@@ -82,10 +90,17 @@ public class C206_CaseStudy {
 					System.out.println("Invalid option entered!");
 					}
 			}else if(option == 3) {
-				//rishwin
+				//Rishwin
 				
+				C206_CaseStudy.menu();
 				int COption = Helper.readInt("Enter an option > ");
-			}else if(option == 4) {
+				if(COption == 1) {
+					viewAllOrder(orderList);
+				}else if(COption == 2) {
+					addOrders(orderList, enterorder());
+				}else if(COption == 3) {
+					payment();
+				}else if(option == 4) {
 				System.out.println("Goodbye!");
 				
 			}else {
@@ -93,6 +108,7 @@ public class C206_CaseStudy {
 			}
 			
 			
+		}
 		}
 	}
 	
@@ -112,6 +128,15 @@ public class C206_CaseStudy {
 		System.out.println("5. Add into Food Menu");
 		System.out.println("6. Delete from Food Menu");
 		System.out.println("7.Quit");
+	}
+	
+	private static void menu() {
+		System.out.println("Canteen Automation System");
+		System.out.println("1.View all orders");
+		System.out.println("2.Add order");
+		System.out.println("3.Make Payment");
+		System.out.println("4.Quit");	
+		
 	}
 	
 	public static void setHeader(String header) {
@@ -248,9 +273,12 @@ public class C206_CaseStudy {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
-		
-		requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
-		System.out.println("Order Added Successfully!");	
+		if (requestList == null) {
+			requestList.add(new RequestOrder(1,name,id,date));
+		}else {
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+		}
+		System.out.println("Order Added Successfully!");		
 	}
 	public static void viewOrders(ArrayList<RequestOrder> requestList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n","Order ID","Name","ID","Request Date");
@@ -273,7 +301,7 @@ public class C206_CaseStudy {
 			}
 		}
 		if (found = false) {
-			System.out.println("Such order id does not exist");
+			System.out.println("Such order ID does not exist");
 		}
 	}
 	private static void viewPromotion(ArrayList<DailyPromotion> dailyPromotion) {
@@ -312,7 +340,53 @@ public class C206_CaseStudy {
 				System.out.println("Food ID does not exist");
 			}
 		}
+	
+	private static String retrieveAllOrders(ArrayList<OrderClass> orderList) {
+		String output = "";
+		for (int i = 0; i < orderList.size(); i++) {
+			output += String.format("%-90s\n", orderList.get(i).toString());
+		}
+		return output;
+	}	
+	
+	private static void viewAllOrder(ArrayList<OrderClass> orderList) {
+		Helper.line(60, "*");
+		System.out.println("Order List");
+		Helper.line(60, "*");
+		
+		String output = String.format("%-20s %-20s %-30s %-60s\n", "ID", "NAME", "STALL","PRICE");
+				output += retrieveAllOrders(orderList);
+	    System.out.println(output);
+	}
+	
+	private static Object enterorder() {
+		String id = Helper.readString("Enter item ID > ");
+		String name = Helper.readString("Enter item name > ");
+		String stall = Helper.readString("Enter the stall name > ");
+		Double price = Helper.readDouble("Enter price > ");
+		
+		OrderClass order = new OrderClass(name, id, stall, price);
+		return order;
+	}
+	
+	private static void addOrders(ArrayList<OrderClass> orderList, Object enterorder) {
+		orderList.add(order);
+		System.out.println("Item added!");
+	}
+	
+	private static void payment() {
+		System.out.println("PayNow");
+		String name = Helper.readString("Enter name: ");
+		System.out.println("Enter this phone number to paynow: 86512390");
+		int phoneNum = Helper.readInt("Enter mobile Number: ");
+		
+		if(phoneNum == 86512390) {
+			System.out.println("Payment Successful");
+			
+		}else {
+			System.out.println("Payment failed!");
+		}
+		
 
 }
-
-
+	}
