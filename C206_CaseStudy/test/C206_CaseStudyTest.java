@@ -12,6 +12,12 @@ public class C206_CaseStudyTest {
 	private Stall S3;
 	
 	private ArrayList<Stall> stallList;
+	
+	private FoodMenu F1;
+	private FoodMenu F2;
+	private FoodMenu F3;
+	
+	private ArrayList<FoodMenu> menuList;
 
 
 	@After
@@ -27,11 +33,19 @@ public class C206_CaseStudyTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		// prepares test data
 		S1 = new Stall("Western cuisine","S1", "17-09-2022");
 		S2 = new Stall("Japanese cuisine","S2", "26-08-2022");
 		S3 = new Stall("Chinese cuisine","S3", "09-08-2022");
 		
 		stallList = new ArrayList<Stall>();
+		
+		F1 = new FoodMenu("Fried Chicken", 6);
+		F2 = new FoodMenu("Tonkotsu Ramen", 5);
+		F3 = new FoodMenu("Dumplings", 4);
+		
+		menuList = new ArrayList<FoodMenu>();
+		
 	}
 	
 	@Test
@@ -76,7 +90,13 @@ public class C206_CaseStudyTest {
 	public void testDeleteStall() {
 		assertNotNull("Check if there is a valid Stall arraylist to delete from", stallList);
 		
+	}
+	
+	@Test 
+	public void testViewFoodMenu() {
+		assertNotNull("Test if there is valid FoodMenu arraylist to view from", menuList);
 		
+		String allMenuItem = C206_CaseStudy.viewFoodMenu(menuList);
 	}
 
 }

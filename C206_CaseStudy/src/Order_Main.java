@@ -11,11 +11,11 @@ public class Order_Main {
 		orderList.add(new OrderClass("Sushi", "S101", "Japanese Food Stall",5.00));
 		orderList.add(new OrderClass("Chicken rice", "S102", "Chinese Food Stall", 3.50));
 		orderList.add(new OrderClass("Butter Naan", "S103", "Indian Food Stall", 3.00));
-		
-		 stallList.add(new Stall("Japanese Food Stall", "J1001",  LocalDate.of(2020, Month.OCTOBER, 21);
-		 stallList.add(new Stall("Chinese Food Stall", "J1002",  LocalDate.of(2020, Month.OCTOBER, 21);
-		 stallList.add(new Stall("Indian Food Stall", "J1003",  LocalDate.of(2020, Month.OCTOBER, 21);
-		
+//		
+//		 stallList.add(new Stall("Japanese Food Stall", "J1001",  LocalDate.of(2020, Month.OCTOBER, 21);
+//		 stallList.add(new Stall("Chinese Food Stall", "J1002",  LocalDate.of(2020, Month.OCTOBER, 21);
+//		 stallList.add(new Stall("Indian Food Stall", "J1003",  LocalDate.of(2020, Month.OCTOBER, 21);
+//		
 		int option = -1;
 		while (option != 5) {
 			Order_Main.menu();

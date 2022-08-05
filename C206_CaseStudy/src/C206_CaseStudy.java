@@ -35,6 +35,7 @@ public class C206_CaseStudy {
 			
 			if (option == 1) {
 				//syafiqah & lovette
+				
 				C206_CaseStudy.CAmenu();
 				int CAoption = Helper.readInt("Enter an option > ");
 				
@@ -114,9 +115,6 @@ public class C206_CaseStudy {
 			}
 			}	
 			
-		
-		
-	
 	
 	public static void memberMenu() {
 		C206_CaseStudy.setHeader("Canteen Automation System");
@@ -127,6 +125,7 @@ public class C206_CaseStudy {
 
 // =========================================CANTEEN ADMINISTRATOR CODE=========================================
 	public static void CAmenu() {
+		Helper.line(80, "=");
 		System.out.println("1.Add stall");
 		System.out.println("2.View stall");
 		System.out.println("3.Delete stall");
@@ -204,14 +203,20 @@ public class C206_CaseStudy {
 	}
 	
 // -----------------------------------------FOOD MENU CODE----------------------------------------------
+	public static String retrieveAllMenu(ArrayList<FoodMenu> menuList) {
+		String output = "";
+		
+		for (int i = 0; i < menuList.size(); i++) {
+			output += String.format("%-25s", menuList.get(i).toString());
+		}
+		return output;
+	}
+	
 	public static void viewFoodMenu(ArrayList<FoodMenu> menuList) {
 		
 		String output = String.format("%-20s %-5s\n", "Name", "Price");
-		
-		for (FoodMenu itemDetails : menuList) {
-			output += String.format("%-25s", itemDetails.toString());
-		}
-		System.out.println(output);		
+		output += retrieveAllMenu(menuList);
+		System.out.println(output);
 	}
 	
 	public static void addToFoodMenu(ArrayList<FoodMenu> menuList) {
@@ -393,7 +398,6 @@ public class C206_CaseStudy {
 		}else {
 			System.out.println("Payment failed!");
 		}
-		
+	}
 
-}
 }
