@@ -61,9 +61,12 @@ public class RequestOrderMain {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
-		
-		requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
-		System.out.println("Order Added Successfully!");	
+		if (requestList == null) {
+			requestList.add(new RequestOrder(1,name,id,date));
+		}else {
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+		}
+		System.out.println("Order Added Successfully!");		
 	}
 
 	private static void menu() {
