@@ -13,16 +13,16 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
-<<<<<<< HEAD
+
 		orderList.add(new OrderClass("S101","Sushi","Japanese Food Stall",5.00));
 		orderList.add(new OrderClass("S102","Chicken rice", "Chinese Food Stall", 3.50));
 		orderList.add(new OrderClass("S103","Butter Naan", "Indian Food Stall", 3.00));
 		
-=======
+
 		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
 		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
 
->>>>>>> branch 'master' of https://github.com/21020124syafiqah/C206_CaseStudy.git
+
 		
 		int option = 0;
 		
@@ -98,6 +98,7 @@ public class C206_CaseStudy {
 			}
 			
 			
+		}
 		}
 	}
 	
@@ -313,5 +314,4 @@ public class C206_CaseStudy {
 		
 
 }
-
-
+	}
