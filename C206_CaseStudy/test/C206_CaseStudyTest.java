@@ -107,10 +107,7 @@ public class C206_CaseStudyTest {
 		assertTrue("Test if stall can be deleted?", ok);
 		
 		ok = C206_CaseStudy.deleteStalls(stallList, "S32");
-		assertFalse("Test that non-existing stall cannot be deleted?", ok);
-		
-		
-		
+		assertFalse("Test that non-existing stall cannot be deleted?", ok);	
 	}
 	
 	@Test 
