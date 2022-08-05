@@ -12,7 +12,7 @@ public class OrderClass {
 		this.stall = stall;
 	}
 	public String toString() {
-		String orderInfo = String.format("%-20s %-20s %-30s %-60s\n", name, id, stall, price);
+		String orderInfo = String.format("%-20s %-20s %-30s %-60s\n", id, name, stall, price);
 		
 		return orderInfo;
 	}
