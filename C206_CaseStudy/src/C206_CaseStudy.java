@@ -197,9 +197,12 @@ public class C206_CaseStudy {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
-		
-		requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
-		System.out.println("Order Added Successfully!");	
+		if (requestList == null) {
+			requestList.add(new RequestOrder(1,name,id,date));
+		}else {
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+		}
+		System.out.println("Order Added Successfully!");		
 	}
 	public static void viewOrders(ArrayList<RequestOrder> requestList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n","Order ID","Name","ID","Request Date");
