@@ -60,6 +60,7 @@ public class C206_CaseStudyTest {
 		
 	}
 	
+// ==================================================Test Methods for Stall==================================================
 	@Test
 	public void testAddStall() {
 		assertNotNull("Check if there is a valid Stall arraylist to add to", stallList);
@@ -110,6 +111,7 @@ public class C206_CaseStudyTest {
 		assertFalse("Test that non-existing stall cannot be deleted?", ok);	
 	}
 	
+// ==================================================Test Methods for FoodMenu==================================================
 	@Test 
 	public void testViewFoodMenu() {
 		assertNotNull("Test if there is valid FoodMenu arraylist to view from", menuList);
@@ -230,6 +232,7 @@ public class C206_CaseStudyTest {
 		assertTrue(exists);		
 	}
 	
+// ==================================================Test Methods for Order==================================================
 	@Test
 	public void testAddOrder() {
 		assertNotNull("Check if there is a valid OrderClass arraylist to add to", orderList);
