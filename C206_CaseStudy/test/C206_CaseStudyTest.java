@@ -77,7 +77,6 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is a valid Stall arraylist to delete from", stallList);
 		
 		
-		
 	}
 
 }

@@ -102,7 +102,7 @@ public class C206_CaseStudy {
 					viewAllOrder(orderList);
 				
 				}else if(COption == 2) {
-					addOrders(orderList, order);
+					//addOrders(orderList, enterorder());
 			
 				}else if(COption == 3) {
 					payment();
