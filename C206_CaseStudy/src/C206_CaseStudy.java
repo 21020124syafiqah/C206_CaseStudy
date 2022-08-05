@@ -216,7 +216,7 @@ public class C206_CaseStudy {
 			}
 		}
 		if (found = false) {
-			System.out.println("Such order id does not exist");
+			System.out.println("Such order ID does not exist");
 		}
 	}
 	private static void viewPromotion(ArrayList<DailyPromotion> dailyPromotion) {
