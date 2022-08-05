@@ -127,7 +127,7 @@ public class C206_CaseStudyTest {
 		C206_CaseStudy.addOrders(orderList, OC2);
 		assertEquals("Check that OrderClass arraylist size is 2", 2, orderList.size());
 		assertSame("Check that OrderClass is added", OC2, orderList.get(1));
-		
+		 
 		C206_CaseStudy.addOrders(orderList, OC3);
 		assertEquals("Check that OrderClass arraylist size is 3", 3, orderList.size());
 		assertSame("Check that OrderClass is added", OC3, orderList.get(2));
