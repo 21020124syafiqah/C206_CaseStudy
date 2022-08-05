@@ -4,8 +4,8 @@ public class RequestOrderMain {
 	private static ArrayList<RequestOrder> requestList = new ArrayList<RequestOrder>();
 
 	public static void main(String[] args) {
-		requestList.add(new RequestOrder(1,"Western Luck","S123","19-02-2005")) ;
-		requestList.add(new RequestOrder(2,"Extremes","D153","19-03-2005"));
+		requestList.add(new RequestOrder(1,"Western Luck","S123","19-02-2005","onions")) ;
+		requestList.add(new RequestOrder(2,"Extremes","D153","19-03-2005","tomatoes"));
         start();
 	}
 	private static void start() {
@@ -61,12 +61,13 @@ public class RequestOrderMain {
 		String name = Helper.readString("Enter stall name > ");
 		String id = Helper.readString("Enter stall ID > ");
 		String date = Helper.readString("Enter date (dd-mm-yyyy) > ");
+		String ingredients = Helper.readString("Enter ingredients to order > ");
 		if (requestList == null) {
-			requestList.add(new RequestOrder(1,name,id,date));
+			requestList.add(new RequestOrder(1,name,id,date, ingredients));
 		}else {
-			requestList.add(new RequestOrder(requestList.size()+1,name,id,date));
+			requestList.add(new RequestOrder(requestList.size()+1,name,id,date,ingredients));
 		}
-		System.out.println("Order Added Successfully!");		
+		System.out.println("Order Added Successfully!");	
 	}
 
 	private static void menu() {
