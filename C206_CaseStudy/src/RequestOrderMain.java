@@ -50,9 +50,9 @@ public class RequestOrderMain {
 	}
 
 	private static void viewOrders(ArrayList<RequestOrder> requestList) {
-		String output = String.format("%-10s %-20s %-10s %-10s\n","Order ID","Name","ID","Request Date");
+		String output = String.format("%-10s %-20s %-10s %-20s %-10s\n","Order ID","Name","ID","Request Date", "Ingredients");
 		for (RequestOrder r : requestList) {
-			output += String.format("%50s\n", r.toString());
+			output += String.format("%60s\n", r.toString());
 		}
 		System.out.println(output);
 	}

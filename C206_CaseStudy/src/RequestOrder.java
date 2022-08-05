@@ -15,7 +15,7 @@ public class RequestOrder {
 	}
 	
 	public String toString() {
-		String requestInfo = String.format("%-10s %-20s %-10s %-10s %-10s",orderId, name, id, requestDate, ingredients);
+		String requestInfo = String.format("%-10s %-20s %-10s %-20s %-10s",orderId, name, id, requestDate, ingredients);
 		
 		return requestInfo;
 	}
