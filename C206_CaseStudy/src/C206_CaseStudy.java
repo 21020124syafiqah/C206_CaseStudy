@@ -12,7 +12,9 @@ public class C206_CaseStudy {
 		stallList.add(new Stall("Japanese cuisine","S2", "26-08-2022"));
 		stallList.add(new Stall("Chinese cuisine","S3", "09-08-2022"));
 		
-		
+		requestList.add(new RequestOrder(1,"Western cuisine","S1","19-02-2005")) ;
+		requestList.add(new RequestOrder(2,"Chinese cuisine","S3","19-03-2005"));
+
 		
 		int option = 0;
 		
