@@ -6,9 +6,15 @@ public class Order_Main {
 	public static void main(String[] args) {
 
 		ArrayList<OrderClass> orderList = new ArrayList<OrderClass>();
+		ArrayList<Stall> stallList = new ArrayList<Stall>();
 		
-		orderList.add(new OrderClass("Sushi", "S101", 5.00));
-		orderList.add(new OrderClass("Chicken rice", "S102", 3.50));
+		orderList.add(new OrderClass("Sushi", "S101", "Japanese Food Stall",5.00));
+		orderList.add(new OrderClass("Chicken rice", "S102", "Chinese Food Stall", 3.50));
+		orderList.add(new OrderClass("Butter Naan", "S103", "Indian Food Stall", 3.00));
+		
+		 stallList.add(new Stall("Japanese Food Stall", "J1001",  LocalDate.of(2020, Month.OCTOBER, 21);
+		 stallList.add(new Stall("Chinese Food Stall", "J1002",  LocalDate.of(2020, Month.OCTOBER, 21);
+		 stallList.add(new Stall("Indian Food Stall", "J1003",  LocalDate.of(2020, Month.OCTOBER, 21);
 		
 		int option = -1;
 		while (option != 5) {
@@ -52,8 +58,9 @@ public class Order_Main {
 	
 	private static void viewAllOrder(ArrayList<OrderClass> orderList) {
 		System.out.println("Order List");
+		Helper.line(60, "*");
 		
-		String output = String.format("%-20s %-10s %-10s\n", "ID", "NAME", "PRICE");
+		String output = String.format("%-20s %-20s %-30s %-60s\n", "ID", "NAME", "STALL","PRICE");
 				output += retrieveAllOrders(orderList);
 	    System.out.println(output);
 		
@@ -61,10 +68,11 @@ public class Order_Main {
 	private static OrderClass enterorder() {
 		String id = Helper.readString("Enter item ID > ");
 		String name = Helper.readString("Enter item name > ");
+		String stall = Helper.readString("Enter stall name");
 		Double price = Helper.readDouble("Enter price > ");
 		
 		
-		OrderClass order = new OrderClass(name, id, price);
+		OrderClass order = new OrderClass(name, id, stall, price);
 		return order;
 	}
 
