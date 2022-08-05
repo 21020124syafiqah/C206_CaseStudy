@@ -265,6 +265,7 @@ public class C206_CaseStudy {
 	}	
 	
 	private static void viewAllOrder(ArrayList<OrderClass> orderList) {
+		Helper.line(60, "*");
 		System.out.println("Order List");
 		Helper.line(60, "*");
 		
