@@ -135,6 +135,26 @@ public class C206_CaseStudyTest {
 		assertEquals("Check that viewFoodMenu", testOutput.toUpperCase(), allMenuItem);
 	}
 	
+	@Test
+	public void testAddToFoodMenu() {
+		assertNotNull("Test if there is valid FoodMenu arraylist to add to", menuList);
+		
+		// after adding 1 item to an empty arraylist, test that the size of the list is 1
+		C206_CaseStudy.addToFoodMenu(menuList, F1);
+		assertEquals("Test if the FoodMenu arraylist size is 1?", 1, menuList.size());
+		// test whether the item just added is the same as the first item in the list
+		assertSame("Test that FoodMenu item just added is the same as the 1st item in the list?", F1, menuList.get(0));
+		
+		// add another item into the arraylist, test that the size of the list is 2, check if the item just added is the same as the 2nd item in the list
+		C206_CaseStudy.addToFoodMenu(menuList, F2);
+		assertEquals("Test if the FoodMenu arraylist size is 2?", 2, menuList.size());
+		assertSame("Test that FoodMenu item just added is the same as the 2nd item in the list?", F2, menuList.get(1));
+		
+		// add another item into the arraylist, test that the size of the list is 2, check if the item just added is the same as the 3rd item in the list
+		C206_CaseStudy.addToFoodMenu(menuList, F3);
+		assertEquals("Test if the FoodMenu arraylist size is 3?", 3, menuList.size());
+		assertSame("Test that FoodMenu item just added is the same as the 3rd item in the list?", F3, menuList.get(2));
+	}
 	
 	@Test
 	public void testAddOrder() {
