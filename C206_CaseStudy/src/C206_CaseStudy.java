@@ -35,6 +35,7 @@ public class C206_CaseStudy {
 			
 			if (option == 1) {
 				//syafiqah & lovette
+				
 				C206_CaseStudy.CAmenu();
 				int CAoption = Helper.readInt("Enter an option > ");
 				
@@ -123,6 +124,7 @@ public class C206_CaseStudy {
 
 // =========================================CANTEEN ADMINISTRATOR CODE=========================================
 	public static void CAmenu() {
+		Helper.line(80, "=");
 		System.out.println("1.Add stall");
 		System.out.println("2.View stall");
 		System.out.println("3.Delete stall");
@@ -391,4 +393,4 @@ public class C206_CaseStudy {
 		
 
 }
-	}
+}
