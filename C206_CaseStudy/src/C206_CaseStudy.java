@@ -368,7 +368,7 @@ public class C206_CaseStudy {
 			}
 		}
 	
-	private static String retrieveAllOrders(ArrayList<OrderClass> orderList) {
+	public static String retrieveAllOrders(ArrayList<OrderClass> orderList) {
 		String output = "";
 		for (int i = 0; i < orderList.size(); i++) {
 			output += String.format("%-90s\n", orderList.get(i).toString());
@@ -396,7 +396,7 @@ public class C206_CaseStudy {
 		return order;
 	}
 	
-	private static void addOrders(ArrayList<OrderClass> orderList, OrderClass order) {
+	public static void addOrders(ArrayList<OrderClass> orderList, OrderClass order) {
 		orderList.add(order);
 		System.out.println("Item added!");
 	}
