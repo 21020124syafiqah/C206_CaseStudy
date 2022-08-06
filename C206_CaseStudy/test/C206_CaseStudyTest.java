@@ -92,9 +92,9 @@ public class C206_CaseStudyTest {
 		assertEquals("Check that Stall arraylist size is 3", 3, stallList.size());
 		
 		allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
-		testOutput = String.format("%-30s %-10s %-20s\n", "Western cuisine","S1", "17-09-2022");
-		testOutput += String.format("%-30s %-10s %-20s\n", "Japanese cuisine","S2", "26-08-2022");
-		testOutput += String.format("%-30s %-10s %-20s\n", "Chinese cuisine","S3", "09-08-2022");
+		testOutput = String.format("%-20s %-10s %-20s\n", "Western cuisine","S1", "17-09-2022");
+		testOutput += String.format("%-20s %-10s %-20s\n", "Japanese cuisine","S2", "26-08-2022");
+		testOutput += String.format("%-20s %-10s %-20s\n", "Chinese cuisine","S3", "09-08-2022");
 		
 		assertEquals("Check that viewAllStalls", testOutput, allStalls);
 	}
