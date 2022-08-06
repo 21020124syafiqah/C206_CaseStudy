@@ -260,12 +260,110 @@ public class C206_CaseStudyTest {
 		assertSame("Check that OrderClass is added", OC3, orderList.get(2));
 	}
 	
-	@Test 
+	@Test
+	public void testViewStall() {
+		assertNotNull("Check if there is a valid Stall arraylist to retrieve from", stallList);
+		
+		String allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
+		String testOutput = "";
+		assertEquals("Check that viewAllStallsList", testOutput, allStalls);
+		
+		C206_CaseStudy.addStall(stallList, S1);
+		C206_CaseStudy.addStall(stallList, S2);
+		C206_CaseStudy.addStall(stallList, S3);
+		assertEquals("Check that Stall arraylist size is 3", 3, stallList.size());
+		
+		allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
+		testOutput = String.format("%-20s %-10s %-10s\n", "Western cuisine","S1", "17-09-2022");
+		testOutput += String.format("%-20s %-10s %-10s\n", "Japanese cuisine","S2", "26-08-2022");
+		testOutput += String.format("%-20s %-10s %-10s\n", "Chinese cuisine","S3", "09-08-2022");
+		
+		testOutput = testOutput.toString();
+		
+		assertEquals("Check that viewAllStalls", testOutput, allStalls);
+	}
+	@Test
 	public void testviewAllOrder() {
-		assertNotNull("Test if there is valid OrderClass arraylist to view from", orderList);
+		assertNotNull("Check if there is a valid orderClass arraylist to retrieve from", orderList);
+		
+		String allOrders = C206_CaseStudy.retrieveAllOrders(orderList);
+		String testOutput = "";
+		assertEquals("Check that viewAllOrder", testOutput, allOrders);
+		
+		C206_CaseStudy.addOrder(orderList, OC1);
+		C206_CaseStudy.addOrder(orderList, OC2);
+		C206_CaseStudy.addOrder(orderList, OC3);
+		assertEquals("Check that orderClass arraylist size is 3", 3, orderList.size());
+		
+		allStalls = C206_CaseStudy.retrieveAllOrders(orderList);
+		testOutput = String.format("%-20s %-20s %-30s %-60s\n", "S101","Sushi","Japanese Food Stall",5.00);
+		testOutput += String.format("%-20s %-20s %-30s %-60s\n", "S102","Chicken rice", "Chinese Food Stall", 3.50);
+		testOutput += String.format("%-20s %-20s %-30s %-60s\n", "S103","Butter Naan", "Indian Food Stall", 3.00);
+		
+		testOutput = testOutput.toString();
+		
+		assertEquals("Check that viewAllOrde", testOutput, allOrders);
+	}
+	
+	@Test
+	public void testRemoveItem() {
+		assertNotNull("Check if there is a valid orderClass arraylist to delete from", orderList);
+		String allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
+		
+		C206_CaseStudy.addStall(stallList, S1);
+		assertEquals("Test if stallList is 1?", 1, stallList.size());
+		
+		stallList.remove(0);
+		assertEquals("Test if stallList is 0?", 0, stallList.size());
+		
+		boolean exist = true;
+		for(Stall item : stallList) {
+			if(item.getName().equals(S1)) {
+				exist = false;
+			}
+		}
+		assertTrue(exist);
+	}
+	@Test
+	public void testDeleteStall() {
+		assertNotNull("Check if there is a valid Stall arraylist to delete from", stallList);
+		String allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
+		
+		C206_CaseStudy.addStall(stallList, S1);
+		assertEquals("Test if stallList is 1?", 1, stallList.size());
+		
+		stallList.remove(0);
+		assertEquals("Test if stallList is 0?", 0, stallList.size());
+		
+		boolean exist = true;
+		for(Stall item : stallList) {
+			if(item.getName().equals(S1)) {
+				exist = false;
+			}
+		}
+		assertTrue(exist);
+	}
+	@Test
+	public void testDeleteStall() {
+		assertNotNull("Check if there is a valid orderClass arraylist to delete from", orderList);
 		String allOrders = C206_CaseStudy.retrieveAllOrders(orderList);
 		
+		C206_CaseStudy.allOrders(orderList, OC1);
+		assertEquals("Test if orderList is 1?", 1, orderList.size());
+		
+		orderList.remove(0);
+		assertEquals("Test if orderList is 0?", 0, orderList.size());
+		
+		boolean exist = true;
+		for(Order item : orderList) {
+			if(item.getName().equals(OC1)) {
+				exist = false;
+			}
+		}
+		assertTrue(exist);
 		
 	}
+	
+	
 
 }
