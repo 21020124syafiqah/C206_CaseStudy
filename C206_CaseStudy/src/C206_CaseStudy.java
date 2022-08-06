@@ -385,7 +385,7 @@ public class C206_CaseStudy {
 	public static String retrieveAllOrders(ArrayList<OrderClass> orderList) {
 		String output = "";
 		for (int i = 0; i < orderList.size(); i++) {
-			output += String.format("%-90s\n", orderList.get(i).toString());
+			output += String.format("%-40s\n", orderList.get(i).toString());
 		}
 		return output;
 	}	
