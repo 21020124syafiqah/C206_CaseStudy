@@ -179,7 +179,7 @@ public class C206_CaseStudy {
 		String output = "";
 		
 		for (int i = 0; i < stallList.size(); i++) {
-			output += String.format("%-90s \n", stallList.get(i).toString());
+			output += String.format("%-40s\n", stallList.get(i).toString());
 		}
 		
 		return output;

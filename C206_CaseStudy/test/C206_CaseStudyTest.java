@@ -96,6 +96,8 @@ public class C206_CaseStudyTest {
 		testOutput += String.format("%-20s %-10s %-10s\n", "Japanese cuisine","S2", "26-08-2022");
 		testOutput += String.format("%-20s %-10s %-10s\n", "Chinese cuisine","S3", "09-08-2022");
 		
+		testOutput = testOutput.toString();
+		
 		assertEquals("Check that viewAllStalls", testOutput, allStalls);
 	}
 	
