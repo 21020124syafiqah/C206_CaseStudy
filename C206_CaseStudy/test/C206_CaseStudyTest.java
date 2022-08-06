@@ -96,7 +96,7 @@ public class C206_CaseStudyTest {
 		testOutput += String.format("%-30s %-10s %-20s\n", "Japanese cuisine","S2", "26-08-2022");
 		testOutput += String.format("%-30s %-10s %-20s\n", "Chinese cuisine","S3", "09-08-2022");
 		
-		assertEquals("Test that viewAllStallsList", testOutput, allStalls);
+		assertEquals("Check that viewAllStalls", testOutput, allStalls);
 	}
 	
 	@Test
@@ -104,11 +104,19 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is a valid Stall arraylist to delete from", stallList);
 		String allStalls = C206_CaseStudy.retrieveAllStalls(stallList);
 		
-		boolean ok = C206_CaseStudy.deleteStalls(stallList, "S1");
-		assertTrue("Test if stall can be deleted?", ok);
+		C206_CaseStudy.addStall(stallList, S1);
+		assertEquals("Test if stallList is 1?", 1, stallList.size());
 		
-		ok = C206_CaseStudy.deleteStalls(stallList, "S32");
-		assertFalse("Test that non-existing stall cannot be deleted?", ok);	
+		stallList.remove(0);
+		assertEquals("Test if stallList is 0?", 0, stallList.size());
+		
+		boolean exist = true;
+		for(Stall item : stallList) {
+			if(item.getName().equals(S1)) {
+				exist = false;
+			}
+		}
+		assertTrue(exist);
 	}
 	
 // ==================================================Test Methods for FoodMenu==================================================
