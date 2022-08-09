@@ -83,10 +83,19 @@ public class C206_CaseStudy {
 						viewPromotion(dailyPromotion);
 						
 				}else if(SOoption == 5) {
-						addPromotion(dailyPromotion);
+						
+					String name = Helper.readString("Enter food name > ");
+					String id = Helper.readString("Enter food ID > ");
+					double price = Helper.readDouble("Enter the food price without discount");
+					double discount = Helper.readDouble("Enter the food discount given");
+					
+					DailyPromotion P1 = new DailyPromotion(name,id, price, discount);
+					
+						addPromotion(dailyPromotion, P1);
 						
 				}else if(SOoption == 6) {
-						deletePromotion(dailyPromotion);
+						String DelID = Helper.readString("Enter Food ID to delete > ");
+						deletePromotion(dailyPromotion,  DelID);
 						
 				}else if(SOoption == 7) {
 					System.out.println("Thank You!");
@@ -355,12 +364,10 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	private static void addPromotion(ArrayList<DailyPromotion> dailyPromotion) {
-		String name = Helper.readString("Enter food name > ");
-		String id = Helper.readString("Enter food ID > ");
-		double price = Helper.readDouble("Enter the food price without discount");
-		double discount = Helper.readDouble("Enter the food discount given");
+	}
+	public static void addPromotion(ArrayList<DailyPromotion> dailyPromotion, DailyPromotion P1) {
 		
-		dailyPromotion.add(new DailyPromotion(name,id,price,discount));
+		dailyPromotion.add(P1);
 		System.out.println("Promotion Added Successfully!");	
 	}
 	private static void deletePromotion(ArrayList<DailyPromotion> dailyPromotion) {
