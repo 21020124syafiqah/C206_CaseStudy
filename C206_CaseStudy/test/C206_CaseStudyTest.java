@@ -10,9 +10,11 @@ public class C206_CaseStudyTest {
 	private Stall S1;
 	private Stall S2;
 	private Stall S3;
+	private DailyPromotion P1;
+	private DailyPromotion P2;
 	
 	private ArrayList<Stall> stallList;
-	
+	private ArrayList<DailyPromotion> dailyPromotion;
 	ArrayList<OrderClass> orderList;
 	
 	private OrderClass OC1;
@@ -58,6 +60,11 @@ public class C206_CaseStudyTest {
 		
 		orderList = new ArrayList<OrderClass>();
 		
+		P1 = new DailyPromotion("Chicken Chop","S1", 4.80, 2.00);
+		P2 = new DailyPromotion("Pork Chop","S2", 4.80, 2.00);
+		
+		dailyPromotion = new ArrayList<DailyPromotion>();
+
 	}
 	
 // ==================================================Test Methods for Stall==================================================
