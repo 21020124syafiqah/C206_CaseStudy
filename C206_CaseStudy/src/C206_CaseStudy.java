@@ -363,19 +363,19 @@ public class C206_CaseStudy {
 		}
 		System.out.println(output);
 	}
-	private static void addPromotion(ArrayList<DailyPromotion> dailyPromotion) {
+	public static void addPromotion(ArrayList<DailyPromotion> dailyPromotion) {
 	}
 	public static void addPromotion(ArrayList<DailyPromotion> dailyPromotion, DailyPromotion P1) {
 		
 		dailyPromotion.add(P1);
 		System.out.println("Promotion Added Successfully!");	
 	}
-	private static void deletePromotion(ArrayList<DailyPromotion> dailyPromotion) {
+		public static void deletePromotion(ArrayList<DailyPromotion> dailyPromotion, String DelID) {
+		// TODO Auto-generated method stub
 		Helper.line(60,"=");
 		viewPromotion(dailyPromotion);
 		Helper.line(60,"=");
 		boolean isFound = false;
-		String DelID = Helper.readString("Enter Food ID to delete > ");
 			
 			for(int i = 0; i < dailyPromotion.size(); i++) {
 				String u = dailyPromotion.get(i).getId();
@@ -387,7 +387,8 @@ public class C206_CaseStudy {
 			if (isFound == false){
 				System.out.println("Food ID does not exist");
 			}
-		}
+	}
+	
 	
 	public static String retrieveAllOrders(ArrayList<OrderClass> orderList) {
 		String output = "";
