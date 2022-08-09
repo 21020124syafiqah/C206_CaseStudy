@@ -302,6 +302,38 @@ public class C206_CaseStudyTest {
 			}
 		}
 		assertTrue(exist);
+	}
+	@Test
+	public void testAddPromotion() {
+		assertNotNull("Check if there is a valid promotion arraylist to retrieve from",dailyPromotion);
+		C206_CaseStudy.addPromotion(dailyPromotion, P1);
+		assertEquals("Check that DailyPromotion arraylist size is 1", 1, dailyPromotion.size());
+		assertSame("Check that DailyPromotion is added", P1, dailyPromotion.get(0));
+
+	}
+
+	@Test
+	public void testViewPromotion() {
+		assertNotNull("Test if there is valid dailyPromotion arraylist to retrieve item", dailyPromotion);
+		
+		C206_CaseStudy.addPromotion(dailyPromotion, P1);
+		
+		assertEquals("Check that DailyPromotion arraylist size is 1", 1, dailyPromotion.size());
+		
+		assertEquals("Chicken Chop", dailyPromotion.get(0).getName());
+
+	}
+	@Test
+	public void testDeletePromotion() {
+		assertNotNull("Check if there is a valid Stall arraylist to delete from", dailyPromotion);
+		C206_CaseStudy.addPromotion(dailyPromotion, P1);
+		C206_CaseStudy.deletePromotion(dailyPromotion, P1.getId());
+		//assertEquals("Check that arraylist size is deleted",dailyPromotion, P1);
+		assertEquals("Check that DailyPromotion arraylist size is 0", 0, dailyPromotion.size());
+		C206_CaseStudy.addPromotion(dailyPromotion, P1);
+		C206_CaseStudy.addPromotion(dailyPromotion, P2);
+		C206_CaseStudy.deletePromotion(dailyPromotion, P1.getId());
+		assertEquals(P2, dailyPromotion.get(0));
 		
 	}
 
