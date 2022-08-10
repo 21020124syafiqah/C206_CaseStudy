@@ -3,7 +3,7 @@
  */
 
 /**
- * @author 21030581
+ * @author 21030581 Peh Yu Xuan, Lovette
  *
  */
 public class FoodMenu {
