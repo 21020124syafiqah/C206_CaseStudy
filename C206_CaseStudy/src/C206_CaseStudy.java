@@ -208,12 +208,15 @@ public class C206_CaseStudy {
 		for (int i = 0; i < stallList.size(); i++) {
 			if(stallList.get(i).getId().equalsIgnoreCase(deleteID)) {
 				String sure = Helper.readString("Are you sure you want to delete stall " + stallList.get(i).getId() + "? (y/n) > ");
+				
 				if(sure.equals("y")) {
 					stallList.remove(i);
 					System.out.println("Stall removed");
 					isDeleted = true;
+					
 				}else if(sure.equals("n")){
 					isDeleted = false;
+					
 				}else {
 					System.out.println("Wrong input");
 				}
