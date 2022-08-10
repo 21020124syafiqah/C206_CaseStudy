@@ -203,7 +203,7 @@ public class C206_CaseStudy {
 	}
 	
 	public static boolean deleteStalls(ArrayList<Stall> stallList, String deleteID ) {
-		boolean isLoaned = false;
+		boolean isDeleted = false;
 		
 		for (int i = 0; i < stallList.size(); i++) {
 			if(stallList.get(i).getId().equalsIgnoreCase(deleteID)) {
@@ -211,15 +211,15 @@ public class C206_CaseStudy {
 				if(sure.equals("y")) {
 					stallList.remove(i);
 					System.out.println("Stall removed");
-					isLoaned = true;
+					isDeleted = true;
 				}else if(sure.equals("n")){
-					isLoaned = false;
+					isDeleted = false;
 				}else {
 					System.out.println("Wrong input");
 				}
 		}
 	}
-		return isLoaned;
+		return isDeleted;
 			
 	}
 	
